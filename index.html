@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Olivia's Room</title>
+          <style>
+            body {
+                background: #ffe399 url("/back.png");
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: arial;
+            }
+            header {
+                font-size: 2em;
+                font-weight: bold;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+                /*border:5px white solid;*/
+                border:15px #f2f2f2 solid;
+                border-radius:50px;
+                overflow:hidden;
+                background:#f2f2f2;
+            }
+            span {
+                font-weight:bold;
+                color:#00D78B;
+            }
+
+            /* navigation menu */
+            nav {
+                background: #00D78B;
+                margin: 0 auto;
+                /*margin-bottom:15px;*/
+                display: flex;
+                padding:10px 20px 10px 20px;
+                border-radius:35px;
+                vertical-align:middle;
+            }
+            nav header {
+                display: flex;
+                align-items: center;
+                color: rgb(255, 255, 255);
+                flex: 1;
+            }
+            nav ul {
+                list-style-image: none;
+                float:right;
+                padding:0px;
+                padding-left:50px;
+            }
+            nav li {
+                display: inline-block;
+                padding-right: 20px;
+                vertical-align:middle;
+            }
+            nav a {
+                text-decoration: none;
+                color: #ffe399;
+            }
+            
+            nav a:hover {
+                color:#fff;
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: #f2f2f2;
+                display: flex;
+                padding:inherit;
+            }
+            .sidebar {
+                /*background: #ffe399;*/
+                border-radius:35px;
+                margin-right: 15px;
+                padding: 0;
+            }
+            .sidebar ul {
+                list-style-image: none;
+                padding:0;
+            }
+            .sidebar li {
+                display:block;
+                height:200px;
+                margin-top:15px;
+            }
+            .sidebar img {
+                width: 200px;
+                height:200px;
+                border-radius:35px;
+            }
+            .imgs {
+                margin:0;
+            }
+            .content {
+                background: #ffe399;
+                border-radius:35px;
+                flex: 1;
+                padding: 15px;
+                margin-top:15px;
+            }
+            .interests header {
+                font-size: 1.25em;
+            }
+            .interests ul {
+                margin-bottom:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="all-contents">
+            <nav>
+                <header>Olivia's Room</header>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="mailto:w.phrush@gmail.com">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <main>
+                <div class="sidebar">
+                    <ul class="imgs">
+                        <li><img src="/me1.png"></li>
+                        <li><img src="/me2.png"></li>
+                        <li><img src="/me3.png"></li>
+                    </ul>
+                        
+                </div>
+                
+                <div class="content">
+                    <header>Olivia</header>
+                
+                    <p>
+                        Professional Contemporary/Ballet Dancer
+                       <br> New Orleans City Planning Commission Office Assistant
+                    </p>
+                    <header>About</header>
+                    <p>
+                        <span>Olivia Rush</span> is a professional dancer trained in ballet, contemporary, modern, tap, and other types of dance. 
+                        Liv moved from her hometown of Woodinville, Washington to attend California Institute of the Arts (CalArts), where she obtained her bachelors of fine arts in dance. 
+                        As well as across the United States, Liv has performed in Russia, Germany, and South Korea. 
+                        Olivia was the first CalArts student to take part in the exchange program between CalArts and Korea National University of the Arts in Seoul, South Korea.
+                        <p>Liv has been self studying web design for over ten years. She's gained a solid base knowledge of HTML, CSS, and begun to grasp Javascript and jQuery. Unfortunately slow, unfocused self study has resulted in poor confidence in her coding abilities, so she's decided to take the next step by pursuing <span>Operation Spark's</span> bootcamp. 
+                        <p>Olivia currently resides in New Orleans, Louisiana, where she's employed as an office assistant at the New Orleans City Planning Commission. Liv is also a member of the dance company <span>FLOCK</span>, though she is on a personal hiatus.
+                    </p>
+                    <section class="interests">
+                        <header>Interests</header>
+                        <ul>
+                            <li>Fashion and shopping</li>
+                            <li>Web and graphic design</li>
+                            <li>Japanese and Korean music</li>
+                            <li>Dancing and biking</li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
