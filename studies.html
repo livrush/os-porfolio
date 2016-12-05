@@ -1,6 +1,77 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            body {
+                background: #ffe399 url("/back2.png");
+                color: #663300;
+                padding: 10px;
+                font-family: arial;
+            }
+            header {
+                font-size: 2em;
+                font-weight: bold;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+                border:15px #f2f2f2 solid;
+                border-radius:50px;
+                overflow:hidden;
+                background:#f2f2f2;
+            }
+            /* navigation menu */
+            nav {
+                background: #00D78B;
+                margin: 0 auto;
+                /*margin-bottom:15px;*/
+                display: flex;
+                padding:10px 20px 10px 20px;
+                border-radius:35px;
+                vertical-align:middle;
+            }
+            nav header {
+                display: flex;
+                align-items: center;
+                color: #fff;
+                flex: 1;
+            }
+            nav ul {
+                list-style-image: none;
+                float:right;
+                padding:0px;
+                padding-left:50px;
+            }
+            nav li {
+                display: inline-block;
+                padding-right: 20px;
+                vertical-align:middle;
+            }
+            nav a {
+                text-decoration: none;
+                color: #ffe399;
+            }
+            
+            nav a:hover {
+                color:#fff;
+            }
+            /* main container area beneath menu */
+            main {
+                background: #ffe399;
+                display: flex;
+                padding:inherit;
+                border-radius:35px;
+                padding:15px;
+                margin-top:15px;
+            }
+            h2 {
+                padding-left:60px;
+            }
+            /*.gist {*/
+            /*    background:red;*/
+            /*    width:600px;*/
+            /*}*/
+        </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
         <link rel="stylesheet" href="css/studies.css" type="text/css" />
@@ -9,7 +80,7 @@
     <body>
         <div id="all-contents">
         <nav>
-            <header>Sheba's Glorious Website</header>
+            <header>Olivia's Wealth of Knowledge</header>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
