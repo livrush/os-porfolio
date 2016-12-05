@@ -15,6 +15,14 @@
                 color: #663300;
                 padding: 15px;
             }
+            .top {
+                border:15px #f2f2f2 solid;
+                border-radius:50px;
+                background:#f2f2f2;
+                width:500px;
+                padding:0;
+                margin:0 auto;
+            }
             
             .animal{
                     width: 300px;
@@ -23,7 +31,7 @@
                     border-radius: 50px;
                     background:#ffe399;
                     float: left;
-                    margin: 20px;
+                    margin: 5px;
                     padding: 10px;
                     color: #663300;
                     text-align: left;
@@ -31,12 +39,12 @@
             }
             .contents.text-center {
                 text-align: center;
-                border:15px #f2f2f2 solid;
-                border-radius: 50px;
+                /*border:15px #f2f2f2 solid;*/
+                border-radius: 35px;
                 background:#00D78B;
-                width:500px;
-                /*padding:15px;*/
-                margin:0 auto 15px auto;
+                /*width:500px;*/
+                padding:5px; 
+                margin:0px auto 15px auto;
             }
             h1{
                 color:#ffe399;
@@ -45,10 +53,10 @@
             #search{
                 /*display: none;*/
                 text-align: center;
-                border:15px #f2f2f2 solid;
-                border-radius: 50px;
-                background:#00D78B;
-                width:500px;
+                /*border:15px #f2f2f2 solid;*/
+                border-radius: 35px;
+                background:#ffe399;
+                /*width:500px;*/
                 padding:15px;
                 margin-left: auto;
                 margin-right: auto;
@@ -124,15 +132,17 @@
         </style>
     </head>
     <body>
-        <div class="contents text-center">
-            <div>
-                <h1>Matchy!</h1>
-                <h2>A social network for Animals</h2>
+        <div class="top">
+            <div class="contents text-center">
+                <div>
+                    <h1>Matchy!</h1>
+                    <h2>A social network for Animals</h2>
+                </div>
             </div>
-        </div>
-        <div id="search">
-            <input type="text" id="query" placeholder="Animal Name"></input>
-            <button id="searchBtn">Search</button>
+            <div id="search">
+                <input type="text" id="query" placeholder="Animal Name"></input>
+                <button id="searchBtn">Search</button>
+            </div>
         </div>
         <div id="create">
             <h4>Create New Animal</h4><br>

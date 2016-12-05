@@ -1,5 +1,5 @@
 let animal = {};
-animal.species = "Dog";
+animal.species = "dog";
 animal["name"] = "Pooper",
 animal.noises = [];
 
