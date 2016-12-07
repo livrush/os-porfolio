@@ -157,8 +157,8 @@ _.each = function(coll, func) {
             func(coll[i], i, coll);
         }
     } else if (typeof coll === "object") {
-        for(i in coll) {
-            func(coll[i], i, coll);
+        for(var key in coll) {
+            func(coll[key], key, coll);
         }
     }
 }
@@ -180,7 +180,7 @@ _.each = function(coll, func) {
 */
 _.indexOf = function(arr, val) {
     for(var i = 0; i < arr.length; i++) {
-        if(arr[i] == val) {
+        if(arr[i] === val) {
             return i;
         }
     }
@@ -224,9 +224,10 @@ _.filter = function(arr, test) {
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 _.reject = function(arr, test) {
-    
+    return _.filter(arr, function(val,index,array) {
+        return !test(val,index,array);
+    })
 }
-
 /** _.partition()
 * Arguments:
 *   1) An array
@@ -245,8 +246,9 @@ _.reject = function(arr, test) {
 *   }); -> [[2,4],[1,3,5]]
 }
 */
-
-
+_.partition = function(arr, test) {
+    return [_.filter(arr, test), _.reject(arr, test)]
+}
 /** _.unique()
 * Arguments:
 *   1) An array
@@ -256,7 +258,15 @@ _.reject = function(arr, test) {
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-
+_.unique = function(arr) {
+    var newArr = [];
+    _.each(arr, function(val,index,coll) {
+        if(_.indexOf(newArr,val) === -1) {
+            newArr.push(coll[index])
+        }
+    });
+    return newArr;
+}
 
 /** _.map()
 * Arguments:
@@ -273,7 +283,13 @@ _.reject = function(arr, test) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function(coll, func) {
+    let arr = [];
+    _.each(coll, function(val,index,array) {
+        arr.push(func(val,index,array))
+    })
+    return arr
+}
 
 /** _.pluck()
 * Arguments:
@@ -285,7 +301,11 @@ _.reject = function(arr, test) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-
+_.pluck = function(arr, key) {
+    return _.map(arr, function(val,index,array) {
+        return array[index][key];
+    })  
+}
 
 /** _.contains()
 * Arguments:
@@ -301,7 +321,9 @@ _.reject = function(arr, test) {
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function(arr, val) {
+    return _.indexOf(arr, val) != -1 ? true : false;    
+};
 
 /** _.every()
 * Arguments:
@@ -323,6 +345,19 @@ _.reject = function(arr, test) {
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+_.every = function(collection, func) {
+    
+    let arr = [];
+    arr.push(_.map(collection, function(e,i,a) {
+        return func(e,i,a) ? true: false;
+    }))
+    if(_.contains(arr, false)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 
 
 /** _.some()

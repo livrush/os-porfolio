@@ -3,7 +3,7 @@
     <head>
         <style>
             body {
-                background: #ffe399 url("/back2.png");
+                background: #e2e2e2 url("/back2.png");
                 color: #663300;
                 padding: 10px;
                 font-family: arial;
@@ -21,14 +21,51 @@
                 background:#f2f2f2;
             }
             /* navigation menu */
+            /*nav {*/
+            /*    background: #00D78B;*/
+            /*    margin: 0 auto;*/
+                /*margin-bottom:15px;*/
+            /*    display: flex;*/
+            /*    padding:10px 20px 10px 20px;*/
+            /*    border-radius:35px;*/
+            /*    vertical-align:middle;*/
+            /*}*/
+            /*nav header {*/
+            /*    display: flex;*/
+            /*    align-items: center;*/
+            /*    color: #fff;*/
+            /*    flex: 1;*/
+            /*}*/
+            /*nav ul {*/
+            /*    list-style-image: none;*/
+            /*    float:right;*/
+            /*    padding:0px;*/
+            /*    padding-left:50px;*/
+            /*}*/
+            /*nav li {*/
+            /*    display: inline-block;*/
+            /*    padding-right: 20px;*/
+            /*    vertical-align:middle;*/
+            /*}*/
+            /*nav a {*/
+            /*    text-decoration: none;*/
+            /*    color: #ffe399;*/
+            /*}*/
+            
+            /*nav a:hover {*/
+            /*    color:#fff;*/
+            /*}*/
+            
+            /* navigation menu */
             nav {
                 background: #00D78B;
                 margin: 0 auto;
-                /*margin-bottom:15px;*/
+                margin-bottom:15px;
                 display: flex;
-                padding:10px 20px 10px 20px;
+                padding:15px 20px 15px 20px;
                 border-radius:35px;
-                vertical-align:middle;
+                
+                /*height:50px;*/
             }
             nav header {
                 display: flex;
@@ -39,21 +76,42 @@
             nav ul {
                 list-style-image: none;
                 float:right;
-                padding:0px;
-                padding-left:50px;
+                padding:0;
+                margin:0;
+                vertical-align:middle;
             }
             nav li {
                 display: inline-block;
-                padding-right: 20px;
-                vertical-align:middle;
+                margin-right: 5px;
+                padding:5px;
+                /*background:#f2f2f2;*/
+                border:5px solid #00D78B;
+                border-radius:10px;
+            }
+            
+            nav li:hover {
+                background:#f2f2f2;
+                border:5px solid #f2f2f2;
             }
             nav a {
                 text-decoration: none;
                 color: #ffe399;
+                font-weight:bold;
             }
             
-            nav a:hover {
-                color:#fff;
+            nav li:hover a, nav a:hover {
+                color:#00D78B;
+            }
+            .contact {
+                background:#ffe399;
+                border:5px solid #ffe399;
+                border-radius:10px;
+            }
+            .contact:hover {
+                
+            }
+            .contact a {
+                color:#00D78B;
             }
             /* main container area beneath menu */
             main {
@@ -81,12 +139,12 @@
     <body>
         <div id="all-contents">
         <nav>
-            <header>Olivia's Wealth of Knowledge</header>
+            <header>Olivia's <!--Wealth of -->Knowledge</header>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="studies.html">Studies</a></li>
-                <!--<li><a href="mailto:w.phrush@gmail.com">Contact</a></li>-->
+                <li class="contact"><a href="mailto:w.phrush@gmail.com">Contact</a></li>
             </ul>
         </nav>
         <main>
