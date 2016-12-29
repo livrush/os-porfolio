@@ -1,0 +1,16 @@
+.example-form {
+    display:flex;
+        /*align-items: baseline;*/
+    justify-content:space-around;
+}
+
+ol, ul {
+    display:flex;
+        /*align-items: baseline;*/
+    justify-content:space-between;
+}
+
+.left {
+    float:right;
+    display:block;
+}

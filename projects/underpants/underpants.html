@@ -189,12 +189,15 @@ QUnit.test("_.reduce()", function(assert){
 
 QUnit.test("_.extend()", function(assert){
     var inputData = {a:"one", b:"two"};
+    
     _.extend(inputData, {c: "three", d: "four"});
     assert.deepEqual(inputData, {a: "one",b:"two",c:"three",d:"four"}, "Should extend an object.");
     inputData = {a:"one", b:"two"};
+    
     _.extend(inputData, {a: "three", d: "four"});
     assert.deepEqual(inputData, {a: "three",b:"two",d:"four"} , "Should overwrite existing properties");
     inputData = {a:"one", b:"two"};
+    
     _.extend(inputData);
     assert.deepEqual(_.extend(inputData, {a:"three",c:"four"}, {d:"five",c:"six"}), {a:"three",b:"two",c:"six",d:"five"}, "Should handle any number of arguments.");
 });

@@ -346,19 +346,16 @@ _.contains = function(arr, val) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 _.every = function(collection, func) {
-    
-    let arr = [];
-    arr.push(_.map(collection, function(e,i,a) {
-        return func(e,i,a) ? true: false;
-    }))
-    if(_.contains(arr, false)) {
-        return false;
-    } else {
-        return true;
+    let arrr = _.map(collection, function(e,i,a) {return Boolean(e)})
+    if(func === undefined ) {
+        if(_.contains(arrr, false)) {return false}
+        return true
     }
+    // if(func === undefined && _.contains(arrr, false)) {return false;} // DOESN'T WORK because the lower array won't work for function being undefined but values being truthy
+    let arr = _.map(collection, function(e,i,a) {return func(e,i,a) ? true: false;})
+    if(_.contains(arr, false)) {return false;} 
+    return true;
 }
-
-
 
 /** _.some()
 * Arguments:
@@ -380,7 +377,17 @@ _.every = function(collection, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function(coll, func) {
+    let valueBool = _.map(coll, function(e,i,a) {return Boolean(e)})
+    if(func === undefined) {
+        if(_.contains(coll, true)) return true;
+        return false;
+    }
+    // if(func === undefined) {_.contains(coll, true) ? true : false;}
+    let valueFunc = _.map(coll, function(e,i,a) {return func(e,i,a) ? true : false;})
+    if(_.contains(valueFunc, true)) return true;
+    return false;
+}
 
 /** _.reduce()
 * Arguments:
@@ -400,8 +407,29 @@ _.every = function(collection, func) {
 * Examples:
 *   _.reduce([1,2,3], function(prev, curr){ return prev + curr}) -> 6
 */
-
-
+_.reduce = function(arr, func, seed) {
+    // console.log("BEGIN BEGIN BEGIN BEGIN BEGIN BEGIN , arr is " + arr);
+    // console.log("the func is \n" + func)
+    // console.log(seed + " is the seed")
+    if(seed === undefined) {
+        let prev = arr[0];
+        for(var i = 1; i < arr.length; i++) {
+        // console.log("index " + i + " is " + arr[i])
+        // console.log("prev is " + prev)
+        prev = func(prev, arr[i], i)
+        // console.log("prev is now " + prev)
+        }
+        return prev
+    }
+    let prev = seed;
+        for(var i = 0; i < arr.length; i++) {
+            // console.log("index is " + i)
+            // console.log("prev is " + prev)
+            prev = func(prev, arr[i], i)
+            // console.log("prev is now " + prev)
+        }
+    return prev
+}    
 /** _.extend()
 * Arguments:
 *   1) An Object
@@ -416,7 +444,16 @@ _.every = function(collection, func) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-
+_.extend = function(obj) {
+    // arguments[i] THIS IS HOW YOU DO IT WITH ARGUMENTS OR W/E
+    var args = Array.prototype.slice.call(arguments);
+    for(var i = 0; i < args.length; i++) {
+        for(var key in args[i]) {
+            args[0][key] = args[i][key];
+        }
+    }
+    return arguments[0]
+}
 
 // This is the proper way to end a javascript library
 }());

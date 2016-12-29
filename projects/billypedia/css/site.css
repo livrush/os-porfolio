@@ -1,0 +1,117 @@
+body {
+    background: #e2e2e2 url("/back3.png");
+    color: #663300;
+    padding: 10px;
+    font-family: arial;
+}
+
+header {
+    font-size: 1.5em;
+    font-weight: bold;
+        text-align: center;
+
+}
+
+#all-contents {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+/* navigation menu */
+
+nav {
+    background: #00D78B;
+    margin: 0 auto;
+    margin-bottom:15px;
+    display: flex;
+    padding:15px 20px 15px 20px;
+    border-radius:35px;
+    font-weight: bold;
+}
+
+nav header {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    flex: 1;
+}
+
+nav ul {
+    -moz-padding-start: 0;
+    -webkit-padding-start: 0;
+    margin:0;
+    list-style-image: none;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* main container area beneath menu */
+
+main {
+    background: rgb(245, 238, 219);
+    display: flex;
+}
+
+.sidebar {
+    margin-right: 15px;
+    padding: 0px;
+    width:200px;
+    overflow:hidden;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+}
+
+#section-top-rated {
+    margin: 15px 0 15px 0;
+}
+
+.recording  {
+    border: #00D78B solid 5px;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 35px;
+}
+
+#list-recordings {
+    margin-bottom: 0px;
+}
+
+.sidebar img {
+    width: 200px;
+    height:200px;
+}
+
+.content {
+    flex: 1;
+    padding: 4px;
+    padding-top: 0;
+    margin-right: 10px;
+}
+
+.discography header {
+    font-size: 1.25em;
+}
+
+#image-billy {
+    /*height:400px;*/
+    cursor: pointer; 
+    /*cursor: hand;*/
+    border-radius:35px;
+}
